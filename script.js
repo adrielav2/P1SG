@@ -6,16 +6,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-// Ejemplo de una casa (lote) representado como polígono
-/*var lote1 = L.polygon([
-    [9.9370, -84.0849],
-    [9.9371, -84.0849],
-    [9.9371, -84.0848],
-    [9.9370, -84.0848]
-  ]).addTo(map);
-  
-  lote1.bindPopup("Casa 4D");*/
-
   var loteE30 = L.polygon([
     [9.8391742, -83.9467995],
     [9.8391036, -83.9468254],
@@ -609,26 +599,128 @@ loteG19.bindPopup("Casa G19");
 ]).addTo(map);
 loteG20.bindPopup("Casa G20");
 
+var centroDiurno = L.polygon([
+  [9.840116,-83.945251],
+  [9.840245,-83.944763],
+  [9.840359,-83.944795],
+  [9.840253,-83.945219],
+  [9.840116,-83.945262]
+]).addTo(map);
+centroDiurno.bindPopup("Centro Diurno Barrio Nuevo");
 
-  // Crear ícono personalizado para postes eléctricos
-  var iconPoste = L.divIcon({
-      className: 'custom-icon',
-      html: '<i class="fas fa-bolt"></i>',
-      iconSize: [30, 30]
-  });
-  
-  // Ejemplo Añadir marcador para un poste eléctrico
-  var poste = L.marker([9.9372, -84.0851], { icon: iconPoste }).addTo(map);
+var parque1 = L.polygon([
+  [9.840258,-83.945214],
+  [9.840385,-83.944744],
+  [9.840480,-83.944733],
+  [9.840599,-83.945163],
+  [9.840362,-83.945254],
+  [9.840327,-83.945219],
+  [9.840256,-83.945211]
+]).addTo(map);
+parque1.bindPopup("Parque recreativo El Cacique");
+
+var parque2 = L.polygon([
+  [9.840103,-83.945267],
+  [9.840015,-83.945294],
+  [9.839955,-83.945128],
+  [9.839984,-83.945109],
+  [9.840026,-83.944919],
+  [9.840235,-83.944750],
+  [9.840110,-83.945267]
+]).addTo(map);
+parque2.bindPopup("Parque de perros El Cacique");
+
+  var iconPoste = L.icon({
+    iconUrl: 'poste.png',  // Asegúrate de tener esta imagen en tu proyecto
+    iconSize: [20, 20], 
+});
+
+//Calle 50
+  var poste = L.marker([9.838882,-83.946721], { icon: iconPoste }).addTo(map);
   poste.bindPopup("Poste eléctrico");
+
+  var poste = L.marker([9.839297,-83.946520], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+  var poste = L.marker([9.839978,-83.946244], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+  var poste = L.marker([9.840449,-83.946021], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+// Avenida 62
+  var poste = L.marker([9.839783,-83.946257], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+  var poste = L.marker([9.839645,-83.945847], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+  var poste = L.marker([9.839518,-83.945444], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+//Calle 48B
+  var poste = L.marker([9.839828,-83.945841], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+  var poste = L.marker([9.840319,-83.945637], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+//Calle48A
+  var poste = L.marker([9.839759,-83.945393], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+  var poste = L.marker([9.840272,-83.945203], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+//Avenida 60
+  var poste = L.marker([9.840409,-83.945337], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+  var poste = L.marker([9.840520,-83.945661], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+  var poste = L.marker([9.840658,-83.946034], { icon: iconPoste }).addTo(map);
+  poste.bindPopup("Poste eléctrico");
+
+  var lineasCalle50 = L.polyline([
+    [9.838882, -83.946721],
+    [9.839297, -83.946520],
+    [9.839783, -83.946257],
+    [9.839978, -83.946244],
+    [9.840449, -83.946021],
+    [9.840658, -83.946034]
+  ], {color: 'black'}).addTo(map);
+
+  var lineasAvenida62 = L.polyline([
+    [9.839783, -83.946257],
+    [9.839645, -83.945847],
+    [9.839518, -83.945444]
+  ], {color: 'black'}).addTo(map);
+
+  var polylineCalle48B = L.polyline([
+    [9.839645, -83.945847],
+    [9.839828, -83.945841],
+    [9.840319, -83.945637],
+    [9.840520, -83.945661]
+  ], {color: 'black'}).addTo(map);
   
-  // Crear ícono para hidrantes usando una imagen
+  var polylineCalle48A = L.polyline([
+    [9.839518, -83.945444],
+    [9.839759, -83.945393],
+    [9.840272, -83.945203]
+  ], {color: 'black'}).addTo(map);
+  
+  var polylineAvenida60 = L.polyline([
+    [9.840272, -83.945203],
+    [9.840409, -83.945337],
+    [9.840520, -83.945661],
+    [9.840658, -83.946034]
+  ], {color: 'black'}).addTo(map);
+  
   var iconHidrante = L.icon({
-      iconUrl: 'path-to-hydrant-icon.png',
-      iconSize: [32, 32],
-      iconAnchor: [16, 32],
-      popupAnchor: [0, -32]
+      iconUrl: 'hidrante.png',
+      iconSize: [20, 20],
   });
   
-  // Ejemplo Añadir marcador para un hidrante
-  var hidrante = L.marker([9.9373, -84.0848], { icon: iconHidrante }).addTo(map);
+  var hidrante = L.marker([9.840750,-83.946455], { icon: iconHidrante }).addTo(map);
   hidrante.bindPopup("Hidrante");
