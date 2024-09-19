@@ -630,6 +630,15 @@ var parque2 = L.polygon([
 ]).addTo(map);
 parque2.bindPopup("Parque de perros El Cacique");
 
+var superF = L.polygon([
+  [9.839532,-83.945554],
+  [9.839423,-83.945597],
+  [9.839386,-83.945511],
+  [9.839484,-83.945439],
+  [9.839532,-83.945554]
+]).addTo(map);
+superF.bindPopup("Súper Felix");
+
   var iconPoste = L.icon({
     iconUrl: 'poste.png',  // Asegúrate de tener esta imagen en tu proyecto
     iconSize: [20, 20], 
